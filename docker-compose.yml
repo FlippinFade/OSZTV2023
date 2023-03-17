@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+	nginx:
+		image: linuxserver/nginx
+		container_name: nginx
+		environment:
+			- PUID=1000
+			- PGID=1000
+			- TZ Europe/Budapest
+		volumes:
+			- /home/at/IR-KKK-11
+		ports:
+			- 8080:80
+		restart: unless-stopped
